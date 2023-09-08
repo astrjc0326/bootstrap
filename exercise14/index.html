@@ -31,11 +31,14 @@
       document.getElementById('weather').innerHTML=`
       <div class="container"> </div>
       <h3 class="display-3"><strong>${data.name}</strong></h3>
-      <p><strong>Temp: ${data.main.temp}</strong><img src=${icon} />
+      <p><img src=${icon} />
+        <br><strong>Temputure: ${data.main.temp}°F</strong>
         <br>
-        ${data.main.temp_min} ~ ${data.main.temp_max}
+        (${data.main.temp_min}°F ~ ${data.main.temp_max}°F)
         <br>
-        Feels Like: ${data.main.feels_like}
+        <strong>Feels Like:</strong> ${data.main.feels_like}°F
+        <br>
+        <strong>Humidity:</strong> ${data.main.humidity}%
       </p>
       `
     }
@@ -43,8 +46,8 @@
 </head>
 <body>
 
-  <div class="card container text-center mt-3   pt-3  ">
-    <input type="text" name="city" id="city">
+  <div class="card container-sm text-center mt-3   pt-3  ">
+    <input type="text" name="city" id="city" placeholder="city name">
     <button type="button" class="btn btn-primary" onclick=handleClick()>Get the weather</button>
     <p id="weather">Here is the weather</p>
 
